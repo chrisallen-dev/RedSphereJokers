@@ -123,7 +123,7 @@ SMODS.Voucher{
                         Xmult_mod = G.P_CENTERS.v_red_hubble.config.extra
                     }
                 end
-                if G.GAME.used_vouchers.v_red_jameswebb and self.ability.consumeable.hand_type == context.scoring_name then
+            else if G.GAME.used_vouchers.v_red_jameswebb and self.ability.consumeable.hand_type == context.scoring_name then
                     return {
                         message = localize{type = 'variable', key = 'a_xmult', vars = {G.P_CENTERS.v_red_jameswebb.config.extra}},
                         Xmult_mod = G.P_CENTERS.v_red_jameswebb.config.extra
