@@ -117,18 +117,20 @@ SMODS.Voucher{
         
         if self.ability.set == "Planet" and not self.debuff then
             if context.joker_main then
+                -- important to order teh latest in the sequence first else it will only use  hubbles xmult value
+                if G.GAME.used_vouchers.v_red_jameswebb and self.ability.consumeable.hand_type == context.scoring_name then
+                    return {
+                        message = localize{type = 'variable', key = 'a_xmult', vars = {G.P_CENTERS.v_red_jameswebb.config.extra}},
+                        Xmult_mod = G.P_CENTERS.v_red_jameswebb.config.extra
+                    }
+                end
                 if G.GAME.used_vouchers.v_red_hubble and self.ability.consumeable.hand_type == context.scoring_name then
                     return {
                         message = localize{type = 'variable', key = 'a_xmult', vars = {G.P_CENTERS.v_red_hubble.config.extra}},
                         Xmult_mod = G.P_CENTERS.v_red_hubble.config.extra
                     }
                 end
-            else if G.GAME.used_vouchers.v_red_jameswebb and self.ability.consumeable.hand_type == context.scoring_name then
-                    return {
-                        message = localize{type = 'variable', key = 'a_xmult', vars = {G.P_CENTERS.v_red_jameswebb.config.extra}},
-                        Xmult_mod = G.P_CENTERS.v_red_jameswebb.config.extra
-                    }
-                end
+                
             end
         end
         return Card_calculate_joker_ref(self,context)
