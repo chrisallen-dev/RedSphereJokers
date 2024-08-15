@@ -104,7 +104,7 @@ SMODS.Voucher{
     requires = {'v_red_hubble'},
     unlocked = true,
     discovered = true,
-    pos = {x = 1, y = 0},
+    pos = {x = 2, y = 0},
     config = {extra = 5},
     atlas = 'RedSphereAtlas'
 
