@@ -9,8 +9,6 @@
 ----------------------------------------------
 ------------MOD CODE -------------------------
 
--- just chcking the commits are working thourhg Visual Studio Code
-
 local config = {
     red_moon_landing = true,
 }
