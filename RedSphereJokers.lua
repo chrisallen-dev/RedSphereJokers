@@ -69,7 +69,25 @@ end
 
 
 
+SMODS.Voucher{
+    key = "hubble",
+    loc_txt = {
+        name = 'Hubble',
+        text = {
+			"{C:planet}Planet{} cards in your",
+            "{C:attention}consumable{} area give",
+            "{C:mult}x3{} Mult for their",
+            "Specified {C:attention}poker hand{}"
+		}
+    },
+    requires = {'v_observatory'},
+    unlocked = true,
+    discovered = true,
+    pos = {x = 1, y = 0},
+    config = {extra = 3},
+    atlas = 'RedSphereAtlas'
 
+}
 
 
 SMODS.Voucher{
@@ -83,7 +101,7 @@ SMODS.Voucher{
             "Specified {C:attention}poker hand{}"
 		}
     },
-    requires = {'v_observatory'},
+    requires = {'v_red_hubble'},
     unlocked = true,
     discovered = true,
     pos = {x = 1, y = 0},
@@ -99,6 +117,12 @@ SMODS.Voucher{
         
         if self.ability.set == "Planet" and not self.debuff then
             if context.joker_main then
+                if G.GAME.used_vouchers.v_red_hubble and self.ability.consumeable.hand_type == context.scoring_name then
+                    return {
+                        message = localize{type = 'variable', key = 'a_xmult', vars = {G.P_CENTERS.v_red_hubble.config.extra}},
+                        Xmult_mod = G.P_CENTERS.v_red_hubble.config.extra
+                    }
+                end
                 if G.GAME.used_vouchers.v_red_jameswebb and self.ability.consumeable.hand_type == context.scoring_name then
                     return {
                         message = localize{type = 'variable', key = 'a_xmult', vars = {G.P_CENTERS.v_red_jameswebb.config.extra}},
