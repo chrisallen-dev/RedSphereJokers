@@ -3,7 +3,7 @@
 --- MOD_ID: redspherejokers
 --- MOD_AUTHOR: [Chris Allen]
 --- MOD_DESCRIPTION: Testing out mod development
---- BADGE_COLOR: FF0000
+--- BADGE_COLOR: 8cb243
 --- PREFIX: red
 
 ----------------------------------------------
