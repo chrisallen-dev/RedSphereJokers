@@ -5,6 +5,7 @@
 --- MOD_DESCRIPTION: Testing out mod development
 --- BADGE_COLOR: 8cb243
 --- PREFIX: red
+--- VERSION: 0.1.1c
 
 ----------------------------------------------
 ------------MOD CODE -------------------------
