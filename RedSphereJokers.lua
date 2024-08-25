@@ -60,7 +60,7 @@ if config.red_moon_landing then
         if context.joker_main then
             return {
                 chip_mod = card.ability.extra.chips,
-                message = "localize{type = 'variable', key = 'a_chips', vars = {card.ability.extra.chips}}"
+                message = localize{type = 'variable', key = 'a_chips', vars = {card.ability.extra.chips}}
             }
         end
     end
